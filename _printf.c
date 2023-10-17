@@ -47,6 +47,32 @@ count++;
 }
 break;
 }
+case 'd':
+case 'i':
+{
+int num = va_arg(args, int);
+int temp = num;
+int num_digits = 0;
+if (num < 0)
+{
+putchar('-');
+count++;
+num = -num;
+}
+do
+{
+num_digits++;
+temp /= 10;
+} while (temp);
+do
+{
+putchar(num / pow(10, num_digits - 1) + '0');
+count++;
+num %= (int)pow(10, num_digits - 1);
+num_digits--;
+} while (num_digits);
+break;
+}
 case '%':
 {
 putchar('%');
