@@ -1,4 +1,6 @@
 #include "main.h"
+#include <stdarg.h>
+#include <unistd.h>
 
 void p(char b[], int *b_ind);
 
